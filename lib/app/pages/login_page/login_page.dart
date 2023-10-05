@@ -24,7 +24,7 @@ class LoginPage extends StatelessWidget {
                   );
                 },
               ),
-              const SizedBox(height: 20), // Espaço entre a logo e o formulário
+              const SizedBox(height: 20),
               const Text(
                 'Faça o login',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
