@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:ticket_task/app/core/ui/widgets/constants.dart';
+import 'package:ticket_task/app/pages/openticket/open_ticket.dart';
+import 'package:ticket_task/app/pages/password/password.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -8,51 +11,102 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: SingleChildScrollView(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              LayoutBuilder(
-                builder: (context, constraints) {
-                  // Ajusta o tamanho da imagem de acordo com a largura do dispositivo
-                  double imageSize = constraints.maxWidth * 0.4;
-
-                  return Image.asset(
-                    'assets/images/preta.png',
-                    width: imageSize,
-                    height: imageSize,
-                  );
-                },
+            children: [
+              Image.asset(
+                ImageConstants.imageLogo,
+                width: 250,
+                height: 250,
               ),
               const SizedBox(height: 20),
-              const Text(
-                'Faça o login',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(
-                  height: 20), // Espaço entre o título e o formulário
-              TextFormField(
-                decoration: const InputDecoration(
-                  labelText: 'E-mail',
-                  border: OutlineInputBorder(),
+              Container(
+                width: double.infinity, // Largura máxima
+                constraints: const BoxConstraints(
+                    maxWidth: 400), // Largura máxima de 400
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(5),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: const Offset(0, 5),
+                    ),
+                  ],
                 ),
-              ),
-              const SizedBox(
-                  height:
-                      20), // Espaço entre o campo de e-mail e o campo de senha
-              TextFormField(
-                decoration: const InputDecoration(
-                  labelText: 'Senha',
-                  border: OutlineInputBorder(),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    const Text(
+                      'Faça login para começar',
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'E-mail',
+                        suffixIcon: Icon(Icons.email_outlined),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    TextFormField(
+                      decoration: const InputDecoration(
+                        labelText: 'Senha',
+                        suffixIcon: Icon(Icons.lock_outline),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(20),
+                          ),
+                        ),
+                      ),
+                      obscureText: true,
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: TextButton(
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Password(),
+                            ),
+                          );
+                        },
+                        child: const Text(
+                          'Esqueci minha senha',
+                          style: TextStyle(
+                            color: ColorsConstants.bluedark,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const OpenTicket(),
+                          ),
+                        );
+                      },
+                      child: const Text('Entrar'),
+                    ),
+                  ],
                 ),
-                obscureText: true, // Para ocultar a senha
-              ),
-              const SizedBox(height: 20), // Espaço abaixo do campo de senha
-              ElevatedButton(
-                onPressed: () {
-                  // Adicione a lógica de login aqui
-                },
-                child: const Text('Entrar'),
               ),
             ],
           ),
