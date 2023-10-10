@@ -44,14 +44,16 @@ class LoginPage extends StatelessWidget {
                     const Text(
                       'Faça login para começar',
                       style: TextStyle(
-                        fontSize: 16,
-                      ),
+                          fontSize: 16, color: ColorsConstants.primaryColor),
                     ),
                     const SizedBox(height: 20),
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: 'E-mail',
-                        suffixIcon: Icon(Icons.email_outlined),
+                        suffixIcon: Icon(
+                          Icons.email_outlined,
+                          color: ColorsConstants.grey,
+                        ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(20),
@@ -63,7 +65,10 @@ class LoginPage extends StatelessWidget {
                     TextFormField(
                       decoration: const InputDecoration(
                         labelText: 'Senha',
-                        suffixIcon: Icon(Icons.lock_outline),
+                        suffixIcon: Icon(
+                          Icons.lock_outline,
+                          color: ColorsConstants.grey,
+                        ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
                             Radius.circular(20),

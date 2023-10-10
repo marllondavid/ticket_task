@@ -42,7 +42,7 @@ sealed class TicketTheme {
           vertical: 20,
         ),
         foregroundColor: Colors.white,
-        backgroundColor: ColorsConstants.bluedark,
+        backgroundColor: ColorsConstants.primaryColor,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),

@@ -12,24 +12,27 @@ class _OpenTicketState extends State<OpenTicket> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: Image.asset(
-          ImageConstants.imageLogo,
-          height: 10,
-        ),
-        title: const Text('Ticket Task'),
-      ),
       body: Drawer(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'MENU',
-                style: TextStyle(
-                  color: ColorsConstants.blue,
-                ),
+              Row(
+                children: [
+                  Image.asset(
+                    ImageConstants.imageLogobranca,
+                    height: 100,
+                    width: 100,
+                  ),
+                  const Text(
+                    'Ticket Task',
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: ColorsConstants.white,
+                    ),
+                  ),
+                ],
               ),
               const SizedBox(
                 height: 20,
@@ -39,14 +42,14 @@ class _OpenTicketState extends State<OpenTicket> {
                 children: [
                   const Icon(
                     Icons.airplane_ticket,
-                    color: ColorsConstants.blue,
+                    color: ColorsConstants.white,
                   ),
                   TextButton(
                     onPressed: () {},
                     child: const Text(
                       'Gerenciar Tickets',
                       style: TextStyle(
-                        color: ColorsConstants.blue,
+                        color: ColorsConstants.white,
                         fontSize: 18,
                       ),
                     ),
@@ -58,14 +61,14 @@ class _OpenTicketState extends State<OpenTicket> {
                 children: [
                   const Icon(
                     Icons.people_sharp,
-                    color: ColorsConstants.blue,
+                    color: ColorsConstants.white,
                   ),
                   TextButton(
                     onPressed: () {},
                     child: const Text(
                       'Gerenciar Usuários',
                       style: TextStyle(
-                        color: ColorsConstants.blue,
+                        color: ColorsConstants.white,
                         fontSize: 18,
                       ),
                     ),
@@ -77,14 +80,14 @@ class _OpenTicketState extends State<OpenTicket> {
                 children: [
                   const Icon(
                     Icons.business_sharp,
-                    color: ColorsConstants.blue,
+                    color: ColorsConstants.white,
                   ),
                   TextButton(
                     onPressed: () {},
                     child: const Text(
                       'Gerenciar Categorias',
                       style: TextStyle(
-                        color: ColorsConstants.blue,
+                        color: ColorsConstants.white,
                         fontSize: 18,
                       ),
                     ),
