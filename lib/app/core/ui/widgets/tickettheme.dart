@@ -13,6 +13,7 @@ sealed class TicketTheme {
 
   static ThemeData themeData = ThemeData(
     useMaterial3: true,
+    fontFamily: FontConstants.fontFamily,
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: Colors.white,
@@ -69,8 +70,6 @@ sealed class TicketTheme {
     ),
     drawerTheme: const DrawerThemeData(
       backgroundColor: ColorsConstants.primaryColor,
-      shadowColor: ColorsConstants.bluedark,
-      elevation: 4,
     ),
   );
 }

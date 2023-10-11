@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+sealed class FontConstants {
+  static const fontFamily = 'Manrope';
+}
+
 sealed class ImageConstants {
   static const imageLogo = 'assets/images/preta.png';
   static const imageLogobranca = 'assets/images/branca.png';

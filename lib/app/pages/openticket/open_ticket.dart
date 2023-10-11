@@ -2,30 +2,37 @@ import 'package:flutter/material.dart';
 import 'package:ticket_task/app/core/ui/widgets/constants.dart';
 
 class OpenTicket extends StatefulWidget {
-  const OpenTicket({super.key});
+  const OpenTicket({Key? key}) : super(key: key);
 
   @override
   State<OpenTicket> createState() => _OpenTicketState();
 }
 
 class _OpenTicketState extends State<OpenTicket> {
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey, // Define a chave para acessar o Scaffold
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.menu), // Ícone do menu (pode ser substituído)
+          onPressed: () {
+            _scaffoldKey.currentState?.openDrawer(); // Abre o Drawer
+          },
+        ),
+        title: const Text('Ticket Task'),
+      ),
       body: Drawer(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
+              const Row(
                 children: [
-                  Image.asset(
-                    ImageConstants.imageLogobranca,
-                    height: 100,
-                    width: 100,
-                  ),
-                  const Text(
+                  Text(
                     'Ticket Task',
                     style: TextStyle(
                       fontSize: 24,
