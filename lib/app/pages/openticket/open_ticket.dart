@@ -9,22 +9,34 @@ class OpenTicket extends StatefulWidget {
 }
 
 class _OpenTicketState extends State<OpenTicket> {
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: _scaffoldKey, // Define a chave para acessar o Scaffold
       appBar: AppBar(
-        leading: IconButton(
-          icon: Icon(Icons.menu), // Ícone do menu (pode ser substituído)
-          onPressed: () {
-            _scaffoldKey.currentState?.openDrawer(); // Abre o Drawer
-          },
-        ),
         title: const Text('Ticket Task'),
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.notifications_none,
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              backgroundColor: ColorsConstants.grey,
+            ),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(
+              Icons.arrow_downward_sharp,
+              size: 20,
+            ),
+          ),
+        ],
       ),
-      body: Drawer(
+      drawer: Drawer(
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
@@ -103,6 +115,70 @@ class _OpenTicketState extends State<OpenTicket> {
               ),
             ],
           ),
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Column(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: const Text('Tickets'),
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: const Text('Tickets'),
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: const Text('Tickets'),
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: const Text('Tickets'),
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(Icons.add),
+                ),
+              ],
+            ),
+            Column(
+              children: [
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 30,
+                      vertical: 15,
+                    ),
+                  ),
+                  child: const Text(
+                    'Novo Ticket',
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

@@ -15,6 +15,7 @@ class TicketApp extends StatelessWidget {
         customLoader: const TicketLoader(),
         builder: (asyncNavigatoObserver) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: 'Ticket Task',
             theme: TicketTheme.themeData,
             //asyncNavigatorObserver controla e abre o loader de qualquer lugar
