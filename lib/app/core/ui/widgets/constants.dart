@@ -6,6 +6,7 @@ sealed class FontConstants {
 
 sealed class ImageConstants {
   static const imageLogo = 'assets/images/preta.png';
+  static const imageBrancaFundo = 'assets/images/Logobranca.png';
   static const imageLogobranca = 'assets/images/branca.png';
 }
 

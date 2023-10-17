@@ -69,7 +69,7 @@ sealed class TicketTheme {
       ),
     ),
     drawerTheme: const DrawerThemeData(
-      backgroundColor: ColorsConstants.primaryColor,
+      backgroundColor: ColorsConstants.greydark,
     ),
   );
 }
